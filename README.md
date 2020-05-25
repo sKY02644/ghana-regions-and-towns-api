@@ -43,7 +43,8 @@ body = {
 
 3.ii. To get all data for a specific city with its corresponding region
 
- ``` body = {
+ ``` 
+ body = {
   "*": "ho"
 }
 ```
