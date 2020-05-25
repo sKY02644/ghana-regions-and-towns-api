@@ -8,7 +8,7 @@ This api allows developers to get their desired cities and regions faster and ea
 
 Request-Type = POST,
 Set Content-Type: application/json.
-Endpoint: https://www.bgsgroups.com/projects/vSkyapi/regions/list/
+Endpoint: https://bgsgroupghana.com/projects/vSkyapi/regions/list/
 
 
 1. To get all regions with their corresponding cities, send a post with they fields as
