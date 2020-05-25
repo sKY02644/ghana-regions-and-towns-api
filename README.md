@@ -12,37 +12,44 @@ Endpoint: https://www.bgsgroups.com/projects/vSkyapi/regions/list/
 
 
 1. To get all regions with their corresponding cities, send a post with they fields as
+```
  body = { 
   "*": "*"
  }
-
-
-
-         
+ ```
 
 2.i. To get all cities in  a specific region
+```
 body = {
    "Greater Accra": "*"
 }
+```
 
  2.ii. To get all cities for spcified regions
+ ```
  body = {
    "Greater Accra": "*",
    "Volta": "*",
    ...
 }
+```
 
 3.i. To get all data for multiple cities and their corresponding regions
+```
 body = {
    "*": ["ho", "keta", "funsi", "weija", ...]
 }
+```
 
 3.ii. To get all data for a specific city with its corresponding region
-  body = {
-   "*": "ho"
+
+ ``` body = {
+  "*": "ho"
 }
+```
   
 If all goes well 
+```
 @return 
       {
        "vSky_code": "002",
@@ -50,3 +57,4 @@ If all goes well
                      "allregions": [array of towns]
                      }
        }
+```
