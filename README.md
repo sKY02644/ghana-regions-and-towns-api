@@ -15,7 +15,7 @@ Data format: JSON
 Endpoint: https://bgsgroupghana.com/projects/vSkyapi/regions/list/
 ```
 
-1. To get all regions with their corresponding cities, send a post with they fields as
+1. To get all regions with their corresponding cities, send a post with the body as
 ```
  body = { 
   "*": "*"
