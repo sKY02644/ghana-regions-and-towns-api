@@ -59,3 +59,96 @@ If all goes well
                      }
        }
 ```
+
+# Sample codes 
+   # PHP-cURL
+   ```
+   <?php
+
+    $curl = curl_init();
+    $body = "{\"Greater Accra\": \"*\"}";
+
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => "https://bgsgroupghana.com/projects/vSkyapi/regions/list/",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "POST",
+      CURLOPT_POSTFIELDS =>$body,
+      CURLOPT_HTTPHEADER => array(
+        "Content-Type: application/json"
+      ),
+    ));
+
+    $response = curl_exec($curl);
+
+    curl_close($curl);
+    echo $response;
+
+    ?>
+  ```
+  # cURL
+  ```
+  curl --location --request POST 'https://bgsgroupghana.com/projects/vSkyapi/regions/list/' \
+--header 'Content-Type: application/json' \
+--data-raw '{"Greater Accra": "*"}'
+ ```
+ 
+ # Nodejs-Native
+ ```
+   var https = require('follow-redirects').https;
+   var fs = require('fs');
+
+   var options = {
+     'method': 'POST',
+     'hostname': 'bgsgroupghana.com',
+     'path': '/projects/vSkyapi/regions/list/',
+     'headers': {
+       'Content-Type': 'application/json'
+     },
+     'maxRedirects': 20
+   };
+
+   var req = https.request(options, function (res) {
+     var chunks = [];
+
+     res.on("data", function (chunk) {
+       chunks.push(chunk);
+     });
+
+     res.on("end", function (chunk) {
+       var body = Buffer.concat(chunks);
+       console.log(body.toString());
+     });
+
+     res.on("error", function (error) {
+       console.error(error);
+     });
+   });
+
+   var postData = JSON.stringify({"*":["Aputuogya","ho","Keta","Funsi","Gwollu","Kpetoe","Kpeve","Weija","Westhills","toogo"]});
+
+   req.write(postData);
+
+   req.end();
+ ```
+ 
+ # Python-Requets
+ ```
+ import requests
+
+  url = "https://bgsgroupghana.com/projects/vSkyapi/regions/list/"
+
+  payload = "{\r\n   \"*\": [\"Aputuogya\", \"ho\", \"Keta\", \"Funsi\", \"Gwollu\", \"Kpetoe\", \"Kpeve\", \"Weija\", \"Westhills\", \"toogo\"]\r\n}"
+  headers = {
+    'Content-Type': 'application/json'
+  }
+
+  response = requests.request("POST", url, headers=headers, data = payload)
+
+  print(response.text.encode('utf8'))
+
+ ```
