@@ -1,4 +1,4 @@
-# ghana-regions-and-towns-api
+# Ghana-Regions-And-Cities-API
 Regions and their corresponding cities in Ghana
 
 # Description
