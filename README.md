@@ -182,7 +182,7 @@ If all goes well
 ```
 
 
-# Thanks to for the json file
+# Json file provided by
 ```
 https://github.com/codingoliver/ghana-cities.git
 ```
