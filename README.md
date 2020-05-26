@@ -12,11 +12,14 @@ Content Type: application/json.
 
 Data format: JSON
 
-Endpoint: https://bgsgroupghana.com/projects/vSkyapi/regions/list/
+URL: https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint}
 ```
+
 
 1. To get all regions with their corresponding cities, send a post with the body as
 ```
+endpoint: 'list/'
+
  body = { 
   "*": "*"
  }
@@ -24,6 +27,8 @@ Endpoint: https://bgsgroupghana.com/projects/vSkyapi/regions/list/
 
 2.i. To get all cities in  a specific region
 ```
+endpoint: 'list/'
+
 body = {
    "Greater Accra": "*"
 }
@@ -31,6 +36,8 @@ body = {
 
  2.ii. To get all cities for spcified regions
  ```
+ endpoint: 'list/'
+
  body = {
    "Greater Accra": "*",
    "Volta": "*",
@@ -40,6 +47,8 @@ body = {
 
 3.i. To get all data for multiple cities and their corresponding regions
 ```
+endpoint: 'list/'
+
 body = {
    "*": ["ho", "keta", "funsi", "weija", ...]
 }
@@ -48,6 +57,8 @@ body = {
 3.ii. To get all data for a specific city with its corresponding region
 
  ``` 
+ endpoint: 'list/'
+
  body = {
   "*": "ho"
 }
@@ -73,7 +84,7 @@ If all goes well
     $body = "{\"Greater Accra\": \"*\"}";
 
     curl_setopt_array($curl, array(
-      CURLOPT_URL => "https://bgsgroupghana.com/projects/vSkyapi/regions/list/",
+      CURLOPT_URL => "https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint},
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
@@ -96,7 +107,7 @@ If all goes well
   ```
   # cURL
   ```
-  curl --location --request POST 'https://bgsgroupghana.com/projects/vSkyapi/regions/list/' \
+  curl --location --request POST 'https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"Greater Accra": "*"}'
  ```
@@ -109,7 +120,7 @@ If all goes well
    var options = {
      'method': 'POST',
      'hostname': 'bgsgroupghana.com',
-     'path': '/projects/vSkyapi/regions/list/',
+     'path': '/projects/vSkyapi/regions/{endpoint}',
      'headers': {
        'Content-Type': 'application/json'
      },
@@ -144,7 +155,7 @@ If all goes well
  ```
  import requests
 
-  url = "https://bgsgroupghana.com/projects/vSkyapi/regions/list/"
+  url = "https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint}"
 
   payload = "{\r\n   \"*\": [\"Aputuogya\", \"ho\", \"Keta\", \"Funsi\", \"Gwollu\", \"Kpetoe\", \"Kpeve\", \"Weija\", \"Westhills\", \"toogo\"]\r\n}"
   headers = {
