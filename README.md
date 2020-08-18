@@ -84,7 +84,7 @@ If all goes well
     $body = "{\"Greater Accra\": \"*\"}";
 
     curl_setopt_array($curl, array(
-      CURLOPT_URL => "https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint},
+      CURLOPT_URL => "https://sefecon.com/api/regions/{endpoint},
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
@@ -107,7 +107,7 @@ If all goes well
   ```
   # cURL
   ```
-  curl --location --request POST 'https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint}' \
+  curl --location --request POST 'https://sefecon.com/api/regions/{endpoint}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"Greater Accra": "*"}'
  ```
@@ -119,8 +119,8 @@ If all goes well
 
    var options = {
      'method': 'POST',
-     'hostname': 'bgsgroupghana.com',
-     'path': '/projects/vSkyapi/regions/{endpoint}',
+     'hostname': 'sefecon.com',
+     'path': '/api/regions/{endpoint}',
      'headers': {
        'Content-Type': 'application/json'
      },
@@ -155,7 +155,7 @@ If all goes well
  ```
  import requests
 
-  url = "https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint}"
+  url = "https://sefecon.com/api/regions/{endpoint}"
 
   payload = "{\r\n   \"*\": [\"Aputuogya\", \"ho\", \"Keta\", \"Funsi\", \"Gwollu\", \"Kpetoe\", \"Kpeve\", \"Weija\", \"Westhills\", \"toogo\"]\r\n}"
   headers = {
