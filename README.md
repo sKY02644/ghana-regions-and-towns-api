@@ -90,6 +90,8 @@ body = {
 
 3.iv.  To get total cities in a specific region plus region(s) with their corresponding cities and the correct order
 ```
+endpoint: 'details/'
+
 body = {
     "Accra": "/",
     "Cenral": ["Weija", ...],
