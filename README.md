@@ -63,8 +63,81 @@ body = {
   "*": "ho"
 }
 ```
+
+3.iii. To get total number of cities in all regions 
+```
+  endpoint: 'details/'
+ 
+ body = {
+     "/": "/",
+ }
+ 
+ @return {
+     "vSky_code": "002",
+     "vSky_msg": {
+         "total_regions": 11,
+         "total_cities": 200,
+             "detailed_view": {
+                     "Volta": 10,
+                     "Central": 4,
+                     "Western": 15
+                     ...
+                 }
+             }
+         }
+
+```
+
+3.iv.  To get total cities in a specific region plus region(s) with their corresponding cities and the correct order
+```
+body = {
+    "Accra": "/",
+    "Cenral": ["Weija", ...],
+    "Bono": ["Brekum", ...],
+    ...
+}
+
+@return {
+    "vSky_code": "002",
+    "vSky_msg": {
+        "detailed_view": {
+                "Greater Accra": 10,
+                ...
+            },
+        "checked": {
+                "Central": {  "Weija"=>false, "Ho"=>false, "Apam"=>true, ... },
+                "Bono": { "Brekum"=>true, "Ho"=>false, "Apam"=>false, ... },
+                ...
+            },
+        "correct_order": {
+                    "Greater Accra": ["Weija", ...],
+                    "Volta": ["Ho", ...],
+                    "Central": ["Apam", ...],
+                    "Bono": ["Brekum", ...],
+                    ...
+                }
+        }
+    }
+ 
+ ```
+ 
+ Tested body against endpoint "https://sefecon.com/api/regions/details/"
+ 
+ ```
+  {
+     "Accra": "/",
+     "Central": ["Abetifi", "Elmina"],
+     "Volta": ["Ho", "Keta", "Togo", "/", "Weija"],
+     "Savannah": ["Bole", "Buipe", "Damango", "Salaga", "Sawla", "Tolon"],
+     "Upper West": ["Funsi", "Gwollu", "Issa", "Jirapa", "Kaleo", "Lambussie", "Lawra", "Nadowli", "Nandom", "Tumu", "Wa", "Wechiau", "Mampong"],
+     "central": "/",
+     "Eastern": ["Mampong", "Adukrom"],
+     "Ashanti": ["Mampong", "Airport"]
+  }
+
+```
   
-If all goes well 
+Results should be in this format 
 ```
 @return 
       {
