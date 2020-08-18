@@ -12,7 +12,7 @@ Content Type: application/json.
 
 Data format: JSON
 
-URL: https://bgsgroupghana.com/projects/vSkyapi/regions/{endpoint}
+URL: https://sefecon.com/api/regions/{endpoint}
 ```
 
 
