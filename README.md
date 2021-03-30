@@ -12,7 +12,7 @@ Content Type: application/json.
 
 Data format: JSON
 
-URL: https://sefecon.com/api/regions/{endpoint}
+URL: https://ghanaregionsapi.herokuapp.com/{endpoint}
 ```
 
 
@@ -123,7 +123,7 @@ body = {
  
  ```
  
- Tested body against endpoint "https://sefecon.com/api/regions/details/"
+ Tested body against endpoint "https://ghanaregionsapi.herokuapp.com/api/regions/details/"
  
  ```
   {
@@ -159,7 +159,7 @@ Results should be in this format
     $body = "{\"Greater Accra\": \"*\"}";
 
     curl_setopt_array($curl, array(
-      CURLOPT_URL => "https://sefecon.com/api/regions/{endpoint},
+      CURLOPT_URL => "https://ghanaregionsapi.herokuapp.com/api/regions/{endpoint},
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
@@ -182,7 +182,7 @@ Results should be in this format
   ```
   # cURL
   ```
-  curl --location --request POST 'https://sefecon.com/api/regions/{endpoint}' \
+  curl --location --request POST 'https://ghanaregionsapi.herokuapp.com/api/regions/{endpoint}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"Greater Accra": "*"}'
  ```
@@ -194,7 +194,7 @@ Results should be in this format
 
    var options = {
      'method': 'POST',
-     'hostname': 'sefecon.com',
+     'hostname': 'ghanaregionsapi.herokuapp.com',
      'path': '/api/regions/{endpoint}',
      'headers': {
        'Content-Type': 'application/json'
@@ -230,7 +230,7 @@ Results should be in this format
  ```
  import requests
 
-  url = "https://sefecon.com/api/regions/{endpoint}"
+  url = "https://ghanaregionsapi.herokuapp.com/api/regions/{endpoint}"
 
   payload = "{\r\n   \"*\": [\"Aputuogya\", \"ho\", \"Keta\", \"Funsi\", \"Gwollu\", \"Kpetoe\", \"Kpeve\", \"Weija\", \"Westhills\", \"toogo\"]\r\n}"
   headers = {
